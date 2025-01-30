@@ -84,7 +84,16 @@
               <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=kbwv2tkAAAAJ&view_op=list_works&sortby=pubdate">Kun Ding</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              Zhihao Li<sup>2</sup>,</span>
+              Zhihao Li<sup>3</sup>,</span>
+            </span>
+            <span class="author-block">
+              Gang Shen<sup>3</sup>,</span>
+            </span>
+            <span class="author-block">
+              Fei Li<sup>3</sup>,</span>
+            </span>
+            <span class="author-block">
+              Qiyuan Cao<sup>1</sup>,</span>
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?hl=zh-CN&user=0ggsACEAAAAJ&view_op=list_works&sortby=pubdate">Shiming Xiang</a><sup>1</sup>,
@@ -93,7 +102,8 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Institute of Automation, Chinese Academy of Sciences</span>,
-            <span class="author-block"><sup>2</sup>Shandong University</span>
+            <span class="author-block"><sup>2</sup>Tower Corporation Limited</span>,
+            <span class="author-block"><sup>3</sup>Shandong University</span>
           </div>
 
           <div class="column has-text-centered">
@@ -165,7 +175,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          Open-vocabulary semantic segmentation (OVSS) is an open-world task that aims to assign each pixel within an image to a specific class defined by arbitrary text descriptions. Recent advancements in large-scale vision-language models have demonstrated their open-vocabulary understanding capabilities, significantly facilitating the development of OOVS. However, most existing methods suffer from either suboptimal performance or long latency. This study introduces ERR-Seg, a novel framework that effectively reduces redundancy to balance accuracy and efficiency. ERR-Seg incorporates a training-free Channel Reduction Module (CRM) that leverages prior knowledge from vision-language models like CLIP to identify the most relevant classes and discard others. Moreover, it incorporates Efficient Semantic Context Fusion (ESCF) with spatial-level and class-level sequence reduction strategies. CRM and ESCF result in substantial memory and computational savings without compromising accuracy. Additionally, noticing the significance of hierarchical semantics extracted from middle-layer features for closed-set semantic segmentation, ERR-Seg introduces the Hierarchical Semantic Module (HSM) to exploit hierarchical semantics in the context of OVSS. Compared to the previous state-of-the-art methods under the ADE20K-847 setting, ERR-Seg achieves \(5.6\%\) mIoU improvement and reduces latency by \(67.3\%\).
+          Open-vocabulary semantic segmentation (OVSS) is an open-world task that aims to assign each pixel within an image to a specific class defined by arbitrary text descriptions. Recent advancements in large-scale vision-language models have demonstrated their open-vocabulary understanding capabilities, significantly facilitating the development of OVSS. However, most existing methods suffer from either suboptimal performance or long latency. This study introduces ERR-Seg, a novel framework that effectively reduces redundancy to balance accuracy and efficiency. ERR-Seg incorporates a training-free Channel Reduction Module (CRM) that leverages prior knowledge from vision-language models like CLIP to identify the most relevant classes while discarding others. Moreover, it incorporates Efficient Semantic Context Fusion (ESCF) with spatial-level and class-level sequence reduction strategies. CRM and ESCF result in substantial memory and computational savings without compromising accuracy. Additionally, recognizing the significance of hierarchical semantics extracted from middle-layer features for closed-set semantic segmentation, ERR-Seg introduces the Hierarchical Semantic Module (HSM) to exploit hierarchical semantics in the context of OVSS. Compared to previous state-of-the-art methods under the ADE20K-847 setting, ERR-Seg achieves +\(5.6\%\) mIoU improvement and reduces latency by \(67.3\%\).
         </div>
       </div>
     </div>
@@ -199,7 +209,7 @@
 
         <div class="content has-text-justified">
           <p>
-            Overall architecture of ERR-Seg. We first utilize the Hierarchical Semantic Module to generate dense pixel-text cost maps. The training-free Channel Reduction Module is then used to eliminate redundant classes. The Efficient Semantic Context Fusion further enhances the cost maps, improving spatial and class-level contextual information. Finally, the Gradual Upsampling Decoder restores the high-rank information of cost maps by incorporating image details from \(\mathcal{F}_1^v\), \(\mathcal{F}_2^v\) and \(\mathcal{F}_3^v\).
+            Overall architecture of ERR-Seg. We first utilize the Hierarchical Semantic Module to generate dense pixel-text cost maps. The training-free Channel Reduction Module is then used to eliminate redundant classes. The Efficient Semantic Context Fusion further enhances the cost maps, improving spatial and class-level contextual information. Finally, the Gradual Upsampling Decoder restores the high-rank information of cost maps by incorporating image details from the middle-layer features \(\mathcal{F}_i^v, i\in \{1,2,3\}\) of CLIP's visual encoder.
           </p>
         </div>
       </div>
@@ -255,11 +265,14 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@misc{chen2025efficientredundancyreductionopenvocabulary,
+      title={Efficient Redundancy Reduction for Open-Vocabulary Semantic Segmentation}, 
+      author={Lin Chen and Qi Yang and Kun Ding and Zhihao Li and Gang Shen and Fei Li and Qiyuan Cao and Shiming Xiang},
+      year={2025},
+      eprint={2501.17642},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.17642}, 
 }</code></pre>
   </div>
 </section>
