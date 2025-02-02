@@ -177,7 +177,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          Open-vocabulary semantic segmentation (OVSS) is an open-world task that aims to assign each pixel within an image to a specific class defined by arbitrary text descriptions. Recent advancements in large-scale vision-language models have demonstrated their open-vocabulary understanding capabilities, significantly facilitating the development of OVSS. However, most existing methods suffer from either suboptimal performance or long latency. This study introduces ERR-Seg, a novel framework that effectively reduces redundancy to balance accuracy and efficiency. ERR-Seg incorporates a training-free Channel Reduction Module (CRM) that leverages prior knowledge from vision-language models like CLIP to identify the most relevant classes while discarding others. Moreover, it incorporates Efficient Semantic Context Fusion (ESCF) with spatial-level and class-level sequence reduction strategies. CRM and ESCF result in substantial memory and computational savings without compromising accuracy. Additionally, recognizing the significance of hierarchical semantics extracted from middle-layer features for closed-set semantic segmentation, ERR-Seg introduces the Hierarchical Semantic Module (HSM) to exploit hierarchical semantics in the context of OVSS. Compared to previous state-of-the-art methods under the ADE20K-847 setting, ERR-Seg achieves +\(5.6\%\) mIoU improvement and reduces latency by \(67.3\%\).
+          Open-vocabulary semantic segmentation (OVSS) is an open-world task that aims to assign each pixel within an image to a specific class defined by arbitrary text descriptions. Recent advancements in large-scale vision-language models have demonstrated that it is capable of understanding open vocabulary in various visual scenes. However, most existing methods suffer from either suboptimal performance or long latency. This paper proposes a novel framework to balance accuracy and efficiency for OVSS in view of Efficient Redundancy Reduction (ERR) with the help of pre-trained models. We name it ERR-Seg for abbreviation. Different from the tricks for channel reduction in traditional architecture design, we construct a training-free Channel Reduction Module (CRM) by leveraging prior knowledge from vision-language models like CLIP to identify the most relevant classes and discard the others. Moreover, an Efficient Semantic Context Fusion (ESCF) is designed to achieve the goal of spatial-level and class-level sequence reduction. Architecturally, CRM and ESCF are concatenated in a staggered form into the ERR-Seg. Additionally, by considering the significance of hierarchical semantics extracted from middle-layer features for the compatibility of closed-set semantic segmentation, ERR-Seg introduces the Hierarchical Semantic Module (HSM) to exploit hierarchical semantics in the context of OVSS. Overall, ERR-Seg results in a lightweight structure for OVSS, characterized by substantial memory and computational savings without compromising accuracy.  Compared to previous state-of-the-art methods under the ADE20K-847 setting, ERR-Seg achieves +\(5.6\%\) mIoU improvement and reduces latency by \(67.3\%\).
         </div>
       </div>
     </div>
@@ -267,15 +267,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{chen2025efficient,
-      title={Efficient Redundancy Reduction for Open-Vocabulary Semantic Segmentation}, 
-      author={Lin Chen and Qi Yang and Kun Ding and Zhihao Li and Gang Shen and Fei Li and Qiyuan Cao and Shiming Xiang},
-      year={2025},
-      eprint={2501.17642},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2501.17642}, 
-}</code></pre>
+    <pre><code>@article{chen2025efficient,
+      title={Efficient Redundancy Reduction for Open-Vocabulary Semantic Segmentation},
+      author={Chen, Lin and Yang, Qi and Ding, Kun and Li, Zhihao and Shen, Gang and Li, Fei and Cao, Qiyuan and Xiang, Shiming},
+      journal={arXiv preprint arXiv:2501.17642},
+      year={2025}
+    }</code></pre>
   </div>
 </section>
 
