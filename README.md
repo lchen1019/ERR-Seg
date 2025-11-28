@@ -17,7 +17,7 @@
 Open-vocabulary semantic segmentation (OVSS) is an open-world task that aims to assign each pixel within an image to a specific class defined by arbitrary text descriptions. While large-scale vision-language models have shown remarkable open-vocabulary capabilities, their image-level pretraining limits effectiveness on pixel-wise dense prediction tasks like OVSS. Recent cost-based methods narrow this granularity gap by constructing pixel-text cost maps and refining them via cost aggregation mechanisms. Despite achieving promising performance, these approaches suffer from high computational costs and long inference latency. In this paper, we identify two major sources of redundancy in the cost-based OVSS framework: redundant information introduced during cost maps construction and inefficient sequence modeling in cost aggregation. To address these issues, we propose ERR-Seg, an efficient architecture that incorporates Redundancy-Reduced Hierarchical Cost maps (RRHC) and Redundancy-Reduced Cost Aggregation (RRCA). Specifically, RRHC reduces redundant class channels by customizing a compact class vocabulary for each image and integrates hierarchical cost maps to enrich semantic representation. RRCA alleviates computational burden by performing both spatial-level and class-level sequence reduction before aggregation. Overall, ERR-Seg results in a lightweight structure for OVSS, characterized by substantial memory and computational savings without compromising accuracy. Compared to previous state-of-the-art methods on the ADE20K-847 benchmark, ERR-Seg improves performance by $5.6\%$ while achieving a 3.1× speedup.
 
 <div align="center">
-  <img src=".asset/framework.png" width="80%">
+  <img src=".asset/framework.png" width="100%">
 </div>
 
 
