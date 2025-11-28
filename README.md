@@ -87,10 +87,13 @@ Open-vocabulary semantic segmentation (OVSS) is an open-world task that aims to 
 </div>
 
 
-| Model        | CLIP       | A-847 | PC-459 | A-150 | PC-59 | PAS-20 | Checkpoint                                                   |
-| ------------ | ---------- | ----- | ------ | ----- | ----- | ------ | ------------------------------------------------------------ |
-| ERR-Seg (B) | ConvNext-B | 13.9  | 20.5   | 35.8  | 56.9  | 95.4   | [ckpt](https://huggingface.co/lchen1019/ERR-Seg) |
-| ERR-Seg (L) | ConvNext-L | 16.9  | 23.9   | 38.3  | 60.7  | 96.6   | [ckpt](https://huggingface.co/lchen1019/ERR-Seg) |
+The model weights can be download [here](https://huggingface.co/lchen1019/ERR-Seg).
+
+
+| Model        | CLIP       | A-847 | PC-459 | A-150 | PC-59 | PAS-20 | 
+| ------------ | ---------- | ----- | ------ | ----- | ----- | ------ | 
+| ERR-Seg (B) | ConvNext-B | 13.9  | 20.5   | 35.8  | 56.9  | 95.4   | 
+| ERR-Seg (L) | ConvNext-L | 16.9  | 23.9   | 38.3  | 60.7  | 96.6   | 
 
 
 
