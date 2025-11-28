@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) Facebook, Inc. and its affiliates.
+from detectron2.config import CfgNode as CN
+
+
+def add_err_seg_config(cfg):
+     cfg.INPUT.DATASET_MAPPER_NAME = "mask_former_semantic"
+     cfg.DATASETS.VAL_ALL = ("coco_2017_val_all_stuff_sem_seg",)
+
+     cfg.INPUT.COLOR_AUG_SSD = False
+     cfg.INPUT.CROP.SINGLE_CATEGORY_MAX_AREA = 1.0
+     cfg.INPUT.SIZE_DIVISIBILITY = -1
+
+     # solver config
+     cfg.SOLVER.WEIGHT_DECAY_EMBED = 0.0
+     cfg.SOLVER.OPTIMIZER = "ADAMW"
+     cfg.SOLVER.CLIP_MULTIPLIER = 0.01
+
+     # convnext backbone
+     cfg.MODEL.ENC = CN()
+     cfg.MODEL.ENC.CLIP_MODEL_NAME = "convnext_large_d_320"
+     cfg.MODEL.ENC.CLIP_PRETRAINED_WEIGHTS = "laion2b_s29b_b131k_ft_soup"
+     cfg.MODEL.ENC.EMBED_DIM = 768
+     cfg.MODEL.SEM_SEG_HEAD.NAME = "ERRSEGHead"
+     cfg.MODEL.SEM_SEG_HEAD.IGNORE_VALUE = 255
+     cfg.MODEL.SEM_SEG_HEAD.NUM_CLASSES = 171
+     cfg.MODEL.SEM_SEG_HEAD.SAMPLE_CLASSES_NUM = 32
+     cfg.MODEL.SEM_SEG_HEAD.TRAIN_CLASS_JSON = "datasets/coco.json"
+     cfg.MODEL.SEM_SEG_HEAD.TEST_CLASS_JSON = "datasets/coco.json"
+     cfg.MODEL.SEM_SEG_HEAD.TEXT_GUIDANCE_DIM = 640
+     cfg.MODEL.SEM_SEG_HEAD.TEXT_GUIDANCE_PROJ_DIM = 128
+     cfg.MODEL.SEM_SEG_HEAD.CORR_FPN_INTER_DIM = 256
+     cfg.MODEL.SEM_SEG_HEAD.CORR_FPN_FUSION_DIM = 128
+     cfg.MODEL.SEM_SEG_HEAD.GUIDANCE_FPN_INTER_DIM = 256
+     cfg.MODEL.SEM_SEG_HEAD.GUIDANCE_FPN_FUSION_DIM = 128
+     cfg.MODEL.SEM_SEG_HEAD.IMAGE_GUIDANCE_DIMS = [1024, 512, 256, 128]
+     cfg.MODEL.SEM_SEG_HEAD.DECODER_GUIDANCE_DIMS = [512, 256, 128]
+     cfg.MODEL.SEM_SEG_HEAD.DECODER_GUIDANCE_PROJ_DIMS = [32, 16, 8]
+     cfg.MODEL.SEM_SEG_HEAD.DECODER_DIMS = [128, 64, 32]
+     cfg.MODEL.SEM_SEG_HEAD.AGGREGATOR_SCALE_RATIO = [2, 2, 2, 2]
+     cfg.MODEL.SEM_SEG_HEAD.AGGREGATOR_DIM = 128
+     cfg.MODEL.SEM_SEG_HEAD.CLIP_FINETUNE = "weight"
+     cfg.MODEL.CLIP_PIXEL_MEAN = [122.7709383, 116.7460125, 104.09373615]
+     cfg.MODEL.CLIP_PIXEL_STD = [68.5005327, 66.6321579, 70.3231630]
