@@ -2,7 +2,7 @@
   <img src=".asset/logo.png" width="30%">
 </div>
 
-# <div align="center">Beyond Next-Token Alignment: Distilling Multimodal Large Language Models via Token Interactions<div>
+# <div align="center">Efficient Redundancy Reduction for Open-Vocabulary Semantic Segmentation<div>
 <div align="center">
   <div>
   <a href="https://arxiv.org/abs/2501.17642"><img src="https://img.shields.io/static/v1?label=Paper&message=Arxiv:ERR-Seg&color=red&logo=arxiv"></a>&nbsp;&nbsp;
