@@ -105,3 +105,17 @@ Our model is related to [CAT-Seg](https://github.com/KU-CVLAB/CAT-Seg) and [SED]
 ## :black_nib: Citation
 
 If you find our work helpful for your research, please consider citing the following BibTeX entry. 
+
+```
+@article{CHEN2026132229,
+    title = {Efficient redundancy reduction for open-vocabulary semantic segmentation},
+    journal = {Neurocomputing},
+    volume = {665},
+    pages = {132229},
+    year = {2026},
+    issn = {0925-2312},
+    doi = {https://doi.org/10.1016/j.neucom.2025.132229},
+    url = {https://www.sciencedirect.com/science/article/pii/S0925231225029017},
+    author = {Lin Chen and Qi Yang and Kun Ding and Zhihao Li and Gang Shen and Fei Li and Qiyuan Cao and Shiming Xiang},
+}
+```
